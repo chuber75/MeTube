@@ -1,0 +1,39 @@
+.top_page_div {
+    /* flex */
+    display: flex;
+    overflow: auto;
+    font-size: 30px;
+    flex-direction: row;
+
+    /* sticky alignment */
+    position: -webkit-sticky;
+    position: sticky;
+    align-self: flex-start;
+    /* pixel that is sticky to */
+    top: 0;
+}
+
+.top_page_logo {
+    flex: 33%;
+    background-color: lightgrey;
+    text-align: left;
+    padding: 5px;
+}
+
+.top_page_search_bar {
+    flex: 33%;
+    background-color: lightgrey;
+    text-align: center;
+    padding: 5px;
+}
+
+.top_page_account_image_link {
+    flex: 33%;
+    background-color: lightgrey;
+    text-align: right;
+    padding: 5px;
+}
+
+.text {
+    /* TODO */
+}
