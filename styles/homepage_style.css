@@ -20,31 +20,38 @@
     z-index: 0;
 }
 
-.navbar_logo {
-    flex: 10%;
+.left {
     background-color: var(--navbar-color);
-    text-align: left;
     padding: 5px;
 }
-.navbar_padding_left {
-    flex: 23%;
+
+.center {
+    display: flex;
+    flex: 1;
     background-color: var(--navbar-color);
+    padding: 15px 5px;
 }
 
-.navbar_search {
-    flex: 33%;
-    background-color: var(--navbar-color);
+.searchbox {
     text-align: center;
-    padding: 5px;
 }
 
-.navbar_padding_right {
-    flex: 23%;
-    background-color: var(--navbar-color);
+.searchbox input[type=text] {
+    background-color: darkgray;
+    display: block;
+    text-align: left;
+    font-size: large;
+    margin: 0;
+    padding: 5px 10px;
+    border: 1px solid black;
 }
 
-.navbar_account {
-    flex: 10%;
+#search-input {
+    display: flex;
+    justify-content: center;
+}
+
+.right {
     background-color: var(--navbar-color);
     text-align: right;
     padding: 5px;
@@ -53,8 +60,7 @@
 /*begin dropdown styles*/
 .dropdown {
     float: right;
-    overflow: visible;
-
+    overflow: hidden;
 }
 
 .dropdown .dropbtn {
