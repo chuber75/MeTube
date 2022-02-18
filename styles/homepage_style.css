@@ -1,4 +1,8 @@
-.top_page_div {
+:root {
+    --navbar-color: lightgrey;
+}
+
+.navbar_flex_div {
     /* flex */
     display: flex;
     overflow: auto;
@@ -12,27 +16,37 @@
     /* pixel that is sticky to */
     top: 0;
 }
-
-.top_page_logo {
-    flex: 33%;
-    background-color: lightgrey;
+.navbar_logo {
+    flex: 10%;
+    background-color: var(--navbar-color);
     text-align: left;
     padding: 5px;
 }
+.navbar_padding_left {
+    flex: 23%;
+    background-color: var(--navbar-color);
+}
 
-.top_page_search_bar {
+.navbar_search {
     flex: 33%;
-    background-color: lightgrey;
+    background-color: var(--navbar-color);
     text-align: center;
     padding: 5px;
 }
 
-.top_page_account_image_link {
-    flex: 33%;
-    background-color: lightgrey;
+.navbar_padding_right {
+    flex: 23%;
+    background-color: var(--navbar-color);
+}
+
+.navbar_account {
+    flex: 10%;
+    background-color: var(--navbar-color);
     text-align: right;
     padding: 5px;
 }
+
+
 
 .text {
     /* TODO */
