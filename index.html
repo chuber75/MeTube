@@ -9,15 +9,20 @@
 </head>
 <body style="margin: 0">
 <div class="navbar_flex_div">
-    <div class="navbar_logo">
+    <div class="left">
         <a href="./index.html">logo</a>
     </div>
-    <div class="navbar_padding_left"></div>
-    <div class="navbar_search">
-        search bar
+    <div class="center">
+        <form id="search-form" class="searchbox">
+            <div>
+                <div id="search-input">
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+        </form>
+        <button id="search-icon"> search </button>
     </div>
-    <div class="navbar_padding_right"></div>
-    <div class="navbar_account">
+    <div class="right">
         <div class="dropdown">
             <button class="dropbtn" onclick="myFunction()">account</button>
             <div class="dropdown-content" id="myDropdown">
