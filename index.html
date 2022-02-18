@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>MeTube</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- style sheets go here -->
     <link rel="stylesheet" href="./styles/homepage_style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body style="margin: 0">
+<body class="default">
 <div class="navbar_flex_div">
     <div class="navbar_logo">
         <a href="./index.html">logo</a>
@@ -19,8 +18,8 @@
     <div class="navbar_padding_right"></div>
     <div class="navbar_account">
         <div class="dropdown">
-            <button class="dropbtn" onclick="myFunction()">account</button>
-            <div class="dropdown-content" id="myDropdown">
+            <button class="dropbtn" onclick="dropFunc()">account</button>
+            <div class="dropdown-content" id="dropdown">
                 <a href="#">Item 1</a>
                 <a href="#">Item 2</a>
                 <a href="#">Item 3</a>
@@ -36,14 +35,14 @@
 <script>
     /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
+    function dropFunc() {
+        document.getElementById("dropdown").classList.toggle("show");
     }
 
     // Close the dropdown if the user clicks outside of it
     window.onclick = function(e) {
         if (!e.target.matches('.dropbtn')) {
-            var myDropdown = document.getElementById("myDropdown");
+            var myDropdown = document.getElementById("dropdown");
             if (myDropdown.classList.contains('show')) {
                 myDropdown.classList.remove('show');
             }
