@@ -1,5 +1,6 @@
 :root {
     --navbar-color: lightgrey;
+    --default-text-color: black;
 }
 
 .navbar_flex_div {
@@ -15,7 +16,10 @@
     align-self: flex-start;
     /* pixel that is sticky to */
     top: 0;
+
+    z-index: 0;
 }
+
 .navbar_logo {
     flex: 10%;
     background-color: var(--navbar-color);
@@ -46,9 +50,11 @@
     padding: 5px;
 }
 
+/*begin dropdown styles*/
 .dropdown {
-    float: left;
-    overflow: hidden;
+    float: right;
+    overflow: visible;
+
 }
 
 .dropdown .dropbtn {
@@ -66,16 +72,15 @@
 
 .dropdown-content {
     display: none;
-    position: relative;
+    position: fixed;
     background-color: var(--navbar-color);
     min-width: 120px;
-    z-index: 1;
 }
 
 .dropdown-content a {
     float: none;
-    color: black;
-    padding: 12px 16px;
+    color: var(--default-text-color);
+    padding: 4px 4px;
     text-decoration: none;
     display: block;
     text-align: right;
@@ -88,7 +93,23 @@
 .show {
     display: block;
 }
+/*end dropdown styles*/
+
+html, body {
+    scrollbar-width: none;
+}
+
+.default::-webkit-scrollbar {
+    display: none;
+}
+
+.default {
+    -ms-overflow-style: none;
+    overflow-y: scroll;
+    margin: 0;
+}
 
 .text {
-    /* TODO */
+    position: static;
+    z-index: 0;
 }
