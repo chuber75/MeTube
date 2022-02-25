@@ -3,12 +3,18 @@
     --default-text-color: black;
 }
 
+.masthead {
+    background-color: var(--navbar-color);
+}
+
 .navbar_flex_div {
     /* flex */
+    padding: 0px 16px;
+    height: 56px;
     display: flex;
-    overflow: auto;
-    font-size: 30px;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
     /* sticky alignment */
     position: -webkit-sticky;
@@ -21,15 +27,17 @@
 }
 
 .left {
-    background-color: var(--navbar-color);
-    padding: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
 }
 
 .center {
     display: flex;
-    flex: 1;
-    background-color: var(--navbar-color);
-    padding: 15px 5px;
+    flex-direciton: row;
+    align-items: center;
+    flex: 0 1 728px;
+    min-width: 0px;
 }
 
 .searchbox {
@@ -42,7 +50,6 @@
     text-align: left;
     font-size: large;
     margin: 0;
-    padding: 5px 10px;
     border: 1px solid black;
 }
 
@@ -52,9 +59,12 @@
 }
 
 .right {
-    background-color: var(--navbar-color);
-    text-align: right;
-    padding: 5px;
+    align-items: center;
+    min-width: 225px;
+    justify-content: flex-end;
+    flex: none;
+    display: flex;
+    flex-direction: row;
 }
 
 /*begin dropdown styles*/
@@ -78,6 +88,8 @@
 
 .dropdown-content {
     display: none;
+    right: 0px;
+    margin-right: 16px;
     position: fixed;
     background-color: var(--navbar-color);
     min-width: 120px;
