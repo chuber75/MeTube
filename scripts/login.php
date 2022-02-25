@@ -18,4 +18,4 @@ if($rs)
     echo "Contact Records Inserted";
 }
 
-header("Location: http://http://webapp.computing.clemson.edu/~nrengie/index");
+header("Location: http://webapp.computing.clemson.edu/~nrengie/index");
