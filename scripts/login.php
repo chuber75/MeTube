@@ -12,3 +12,10 @@ $psw_repeat = $_POST['psw_repeat'];
 $sql = "INSERT INTO `user_accounts` (`Id`, `FirstName`, `LastName`, `USER_NAME`, `USER_EMAIL`, `USER_PASS`, `USER_BIRTH`, `CREATION_DATE`) VALUES ('0', '$firstname', '$lastname', '$username', '$email', '$psw', '$birthdate', '$birthdate')";
 
 $rs = mysqli_query($con, $sql);
+
+if($rs)
+{
+    echo "Contact Records Inserted";
+}
+
+header("Location: http://http://webapp.computing.clemson.edu/~nrengie/index");
