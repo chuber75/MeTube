@@ -5,6 +5,12 @@
 
 .masthead {
     background-color: var(--navbar-color);
+    /* sticky alignment */
+    position: -webkit-sticky;
+    position: sticky;
+    align-self: flex-start;
+    /* pixel that is sticky to */
+    top: 0;
 }
 
 .navbar_flex_div {
@@ -15,27 +21,20 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-
-    /* sticky alignment */
-    position: -webkit-sticky;
-    position: sticky;
-    align-self: flex-start;
-    /* pixel that is sticky to */
-    top: 0;
-
-    z-index: 0;
 }
 
 .left {
     display: flex;
     align-items: center;
     flex-direction: row;
+    margin-top: 10px;
 }
 
 .center {
     display: flex;
     flex-direciton: row;
     align-items: center;
+    justify-content: center;
     flex: 0 1 728px;
     min-width: 0px;
 }
@@ -48,9 +47,16 @@
     background-color: darkgray;
     display: block;
     text-align: left;
-    font-size: large;
+    font-size: 16px;
+    line-height: 24px;
+    width: 300px;
     margin: 0;
     border: 1px solid black;
+}
+
+.searchbutton {
+    font-size: 16px;
+    line-height: 24px;
 }
 
 #search-input {
@@ -60,6 +66,7 @@
 
 .right {
     align-items: center;
+    margin-top: 5px;
     min-width: 225px;
     justify-content: flex-end;
     flex: none;
