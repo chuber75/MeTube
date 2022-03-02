@@ -97,7 +97,7 @@ if(isset($_GET['accountcreated']))
         <div class="clearfix">
             <button type="submit" class="loginbtn">Login</button>
         </div>
-        <p class="message">Not registered? <a href="./signUp.html">Create an account</a></p>
+        <p class="message">Not registered? <a href="./signUp.php">Create an account</a></p>
     </div>
 </form>
 
