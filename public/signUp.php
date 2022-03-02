@@ -76,7 +76,7 @@
 <form method="post" action="signUp.php" style="border:1px solid #ccc">
     <div class="container">
        
-     <?php include('scripts/create_account.php') ?>
+     <?php include('./create_account.php') ?>
 
      <?php if ($userRegistered == FALSE): ?>
 
