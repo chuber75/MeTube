@@ -26,8 +26,8 @@ export default class Navbar extends React.Component {
                 <input type="image" className="dropbtn" onClick={this.dropFunc}
                        src={DefaultAccount}/>
                 <div className="dropdown-content" id="dropdown">
-                    <a href="./login.html">Log-in</a>
-                    <a href="./signUp.html">Sign up</a>
+                    <a href="./login.php">Log-in</a>
+                    <a href="./signUp.php">Sign up</a>
                 </div>
             </div>
         );
@@ -35,7 +35,7 @@ export default class Navbar extends React.Component {
 
     logo = () => {
         return (
-            <a href="../../public/index.html"><img src={Logo}/></a>
+            <a href="./index.html"><img src={Logo}/></a>
         );
     }
 
