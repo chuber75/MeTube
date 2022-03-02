@@ -26,8 +26,8 @@ export default class Navbar extends React.Component {
                 <input type="image" className="dropbtn" onClick={this.dropFunc}
                        src={DefaultAccount}/>
                 <div className="dropdown-content" id="dropdown">
-                    <a href="../../public/login.html">Log-in</a>
-                    <a href="../../public/signUp.html">Sign up</a>
+                    <a href="./login.html">Log-in</a>
+                    <a href="./signUp.html">Sign up</a>
                 </div>
             </div>
         );

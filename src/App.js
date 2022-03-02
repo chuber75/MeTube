@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./components/Navbar";
-import TempBody from "./components/TempBody";
+import TempBody from "./components/TempBody"
+import globalLoginState from "./components/authContext";
+import Login from "./components/Login";
 
 function App() {
+    const [authenticated, setAuthenticated] = useState(false);
   return (
-      <div>
-          <Navbar />
-          <TempBody />
-      </div>
+      <globalLoginState.Provider value={{ authenticated, setAuthenticated }}>
+          <div>
+              <Navbar />
+              <Login />
+              <TempBody />
+          </div>
+      </globalLoginState.Provider>
   );
 }
 
