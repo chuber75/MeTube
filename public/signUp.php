@@ -73,31 +73,36 @@
 </style>
 <body>
 
-<form method="post" action="./scripts/create_account.php" style="border:1px solid #ccc">
+<form method="post" action="signUp.php" style="border:1px solid #ccc">
     <div class="container">
+       
+     <?php include('scripts/create_account.php') ?>
+
+     <?php if ($userRegistered == FALSE): ?>
+
         <h1 style="text-align:center;">Sign Up</h1>
         <h2 style="text-align:center;">Please fill in this form to create a MeTube account.</h2>
         <hr>
 
         <label for="firstname"><b>First Name</b></label>
         <br>
-        <input type="text" placeholder="Enter First Name" name="firstname" required>
+	<input type="text" placeholder="Enter First Name" name="firstname" value="<?php echo $firstname; ?>" required>
 
         <label for="lastname"><b>Last Name</b></label>
         <br>
-        <input type="text" placeholder="Enter Last Name" name="lastname" required>
+	<input type="text" placeholder="Enter Last Name" name="lastname" value="<?php echo $lastname; ?>" required>
 
         <label for="email"><b>Email</b></label>
         <br>
-        <input type="text" placeholder="Enter Email" name="email" required>
+	<input type="text" placeholder="Enter Email" name="email" value="<?php echo $email; ?>" required>
 
         <label for="username"><b>Username</b></label>
         <br>
-        <input type="text" placeholder="Enter Username" name="username" required>
+	<input type="text" placeholder="Enter Username" name="username" value="<?php echo $username; ?>" required>
 
         <label for="birthdate"><b>Birth Date</b></label>
         <br>
-        <input type="date" placeholder="Enter Birthdate" name="birthdate" required>
+	<input type="date" placeholder="Enter Birthdate" name="birthdate" value="<?php echo $birthdate; ?>" required>
 
         <br>
         <br>
@@ -117,9 +122,9 @@
         <div class="clearfix">
             <button type="button" class="cancelbtn">Cancel</button>
             <button type="submit" class="signupbtn">Sign Up</button>
-        </div>
-    </div>
+	</div>
+    <?php endif; ?>
+</div>
 </form>
-
 </body>
 </html>
