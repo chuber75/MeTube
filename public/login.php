@@ -1,3 +1,13 @@
+<?php
+if(isset($_GET['accountcreated']))
+{
+	$parameter = $_GET['accountcreated'];
+	if($parameter == 'true')
+	{
+		echo "<h2 style = 'color:red;'> Account Created </h2>";
+	}
+}
+?>
 <!DOCTYPE html>
 <html>
 <style>
