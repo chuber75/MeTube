@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./stylesheets/app.css"
-import Navbar from "./components/Navbar";
+import Navbar, {NavbarLoggedIn, NavbarLoggedOut} from "./components/Navbar";
 import TempBody from "./components/TempBody"
 import globalLoginState from "./components/authContext";
 import Login from "./components/Login";
@@ -26,7 +26,7 @@ function App() {
                         <Route path="login" element={<LoginRedirect />} />
                         <Route path="create_account" element={<CreateAccountRedirect />} />
                         <Route element={<RequireAuth />}>
-                            <Route path="/authpage" element={<Authpage />} />
+                            <Route path="authpage" element={<Authpage />} />
                         </Route>
                     </Routes>
                 </div>
@@ -43,7 +43,7 @@ function RequireAuth() {
     let auth = useAuth();
     let location = useLocation();
 
-    if (!auth.user) {
+    if (!auth.authenticated) {
         // Redirect them to the /login page, but save the current location they were
         // trying to go to when they were redirected. This allows us to send them
         // along to that page after they login, which is a nicer user experience
@@ -56,7 +56,7 @@ function RequireAuth() {
 function PageNotFound() {
     return (
         <div>
-            <Navbar />
+            <NavbarSelector />
             <h1 className="text">DIRECTORY NOT FOUND</h1>
         </div>
     )
@@ -65,7 +65,7 @@ function PageNotFound() {
 function Homepage() {
     return (
         <div>
-            <Navbar />
+            <NavbarSelector />
             <Login />
             <TempBody />
         </div>
@@ -75,7 +75,7 @@ function Homepage() {
 function Authpage() {
     return (
         <div>
-            <Navbar />
+            <NavbarSelector />
             <h1>yoooooo</h1>
         </div>
     );
@@ -87,6 +87,11 @@ function LoginRedirect() {
 
 function CreateAccountRedirect() {
     return <Navigate to="/signup.php"/>;
+}
+
+function NavbarSelector() {
+    let auth = useAuth();
+    return auth.authenticated ? <NavbarLoggedIn /> : <NavbarLoggedOut />;
 }
 
 export default App;
