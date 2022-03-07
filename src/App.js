@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./stylesheets/app.css"
 import Navbar from "./components/Navbar";
 import TempBody from "./components/TempBody"
 import globalLoginState from "./components/authContext";
@@ -15,18 +16,27 @@ import {
 
 function App() {
     const [authenticated, setAuthenticated] = useState(false);
-  return (
-      <globalLoginState.Provider value={{ authenticated, setAuthenticated }}>
-          <Router>
-              <div>
-                  <Routes>
-                      <Route path="/" element={<Homepage />} />
-                  </Routes>
-              </div>
-          </Router>
+    return (
+        <globalLoginState.Provider value={{ authenticated, setAuthenticated }}>
+            <Router>
+                <div>
+                    <Routes>
+                        <Route path="/" element={<Homepage />} />
+                        <Route path="*" element={<PageNotFound />} />
+                    </Routes>
+                </div>
+            </Router>
+        </globalLoginState.Provider>
+    );
+}
 
-      </globalLoginState.Provider>
-  );
+function PageNotFound() {
+    return (
+        <div>
+            <Navbar />
+            <h1 className="text">DIRECTORY NOT FOUND</h1>
+        </div>
+    )
 }
 
 function Homepage() {
