@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import "../stylesheets/navbar.css"
 import Logo from "../images/default_logo.png";
 import DefaultAccount from "../images/default_account.png"
+import authContext from "./authContext";
+import {Link} from "react-router-dom";
 
 export default class Navbar extends React.Component {
+    static auth = authContext;
+
     dropFunc() {
         document.getElementById("dropdown").classList.toggle("show");
     }
@@ -20,26 +24,64 @@ export default class Navbar extends React.Component {
         );
     };
 
-    dropdown = () => {
+    dropdownLoggedOut = () => {
         return (
             <div className="dropdown">
                 <input type="image" className="dropbtn" onClick={this.dropFunc}
-                       src={DefaultAccount}/>
+                       src={DefaultAccount} alt={"Account"}/>
                 <div className="dropdown-content" id="dropdown">
-                    <a href="./login.php">Log-in</a>
-                    <a href="./signUp.php">Sign up</a>
+                    <Link to={"/login.php"}>Log-in</Link>
+                    <Link to={"/signup.php"}>Sign up</Link>
                 </div>
             </div>
         );
     }
 
+    dropdownLoggedIn = () => {
+        return (
+            <div className="dropdown">
+                <input type="image" className="dropbtn" onClick={this.dropFunc}
+                       src={DefaultAccount} alt={"Account"}/>
+                <div className="dropdown-content" id="dropdown">
+                    <Link to={"/account"}>Account</Link>
+                </div>
+            </div>
+        );
+    }
+
+    dropdown = () => {
+        var auth1 = this.context;
+        if(auth1.authenticated) {
+            return (
+                <div className="dropdown">
+                    <input type="image" className="dropbtn" onClick={this.dropFunc}
+                           src={DefaultAccount} alt={"Account"}/>
+                    <div className="dropdown-content" id="dropdown">
+                        <Link to={"/account"} >Account</Link>
+                    </div>
+                </div>
+            );
+        }
+        return (
+            <div className="dropdown">
+                <input type="image" className="dropbtn" onClick={this.dropFunc}
+                       src={DefaultAccount} alt={"Account"}/>
+                <div className="dropdown-content" id="dropdown">
+                    <Link to={"/login.php"}>Log-in</Link>
+                    <Link to={"/signup.php"}>Sign up</Link>
+                </div>
+            </div>
+        );
+    };
+
     logo = () => {
         return (
-            <a href="./index.html"><img src={Logo}/></a>
+            <Link to={"/"}><img src={Logo} alt={"Logo"}/></Link>
         );
     }
 
     render() {
+
         return (
             <div className="masthead">
                 <div className="navbar_flex_div">
