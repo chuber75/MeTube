@@ -30,8 +30,8 @@ export default class Navbar extends React.Component {
                 <input type="image" className="dropbtn" onClick={this.dropFunc}
                        src={DefaultAccount} alt={"Account"}/>
                 <div className="dropdown-content" id="dropdown">
-                    <Link to={"/login.php"}>Log-in</Link>
-                    <Link to={"/signup.php"}>Sign up</Link>
+                    <Link to={"login"}>Log-in</Link>
+                    <Link to={"create_account"}>Sign up</Link>
                 </div>
             </div>
         );
@@ -67,8 +67,8 @@ export default class Navbar extends React.Component {
                 <input type="image" className="dropbtn" onClick={this.dropFunc}
                        src={DefaultAccount} alt={"Account"}/>
                 <div className="dropdown-content" id="dropdown">
-                    <Link to={"/login.php"}>Log-in</Link>
-                    <Link to={"/signup.php"}>Sign up</Link>
+                    <Link to={"login"}>Log-in</Link>
+                    <Link to={"create_account"}>Sign up</Link>
                 </div>
             </div>
         );
