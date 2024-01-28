@@ -1,27 +1,33 @@
 import React from "react";
-import "../stylesheets/navbar.css"
-import {Link} from "react-router-dom";
+import globalLoginState from "./GlobalLoginState";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
-export default class TempBody extends React.Component {
-    constructor(props) {
-        super(props);
+const initialState = {
+    //test case, set result: [] when ready
+    result: [
+       // {name: "testname", mediaID: 1, mediaDesc: "test Desc", mediaTags: "tag1,tag2"},
+       // {name: "testname2", mediaID: 5, mediaDesc: "test Desc2", mediaTags: "tag21,tag22"}
+    ],
+    numResults: 0
+}
 
-        this.state = {
-            mediaID: 1,
-            imgID: 5,
-            result: []
-        }
-    }
+export default class SearchPage extends React.Component {
+
+    state = initialState;
+
+    static contextType = globalLoginState;
 
     componentDidMount(){
-        this.getContent()
+        this.getSearch()
     }
 
-    getContent(){
+
+    getSearch = () => {
+        const context = this.context;
 
         let formData = new FormData();
-        formData.append('search', '');
+        formData.append('search', context.search);
 
         /*for( var value of formData.values()){
             console.log(value);
@@ -36,9 +42,10 @@ export default class TempBody extends React.Component {
             .then((response) => {
                 //handle successs
                 console.log(response.data)
+                this.setState({numResults: response.data.numResults})
                 let results = response.data.results
                 console.log(results)
-                for(let i = 0; i < response.data.numResults; i++){
+                for(let i = 0; i < this.state.numResults; i++){
                     this.setState({result: [...this.state.result, {name: results[i].NAME, mediaID: results[i].Media_ID, mediaDesc: results[i].DESCRIPTION, type: results[i].TYPE, mediaTags: results[i].TAGS}]})
                 }
             })
@@ -68,6 +75,7 @@ export default class TempBody extends React.Component {
     render() {
         return (
             <div>
+                Number of results: {this.state.numResults}
                 <ul>
                     {this.parseResults(this.state.result)}
                 </ul>
